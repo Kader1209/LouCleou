@@ -56,12 +56,12 @@
                   <div class="sim-field sim-step sim-premium-field" id="step-type">
                     <h2 class="sim-step-title">Type de bien</h2>
                     <div class="picker-field sim-premium-picker">
-                      <button type="button" class="picker-arrow" id="simTypePrev" aria-label="Type précédent">‹</button>
+                      <button type="button" class="picker-arrow sim-picker-arrow sim-picker-arrow--prev" id="simTypePrev" aria-label="Type précédent"></button>
                       <div class="picker-display">
                         <span class="picker-label" id="simTypeLabel">T2</span>
                         <span class="picker-sublabel" id="simTypeSublabel">Deux pièces, fort potentiel locatif</span>
                       </div>
-                      <button type="button" class="picker-arrow" id="simTypeNext" aria-label="Type suivant">›</button>
+                      <button type="button" class="picker-arrow sim-picker-arrow sim-picker-arrow--next" id="simTypeNext" aria-label="Type suivant"></button>
                     </div>
                     <select id="simType" class="visually-hidden" aria-hidden="true" tabindex="-1">
                       <option value="studio">Studio</option>
@@ -75,12 +75,12 @@
                   <div class="sim-field sim-step sim-premium-field" id="step-city">
                     <h2 class="sim-step-title">Ville</h2>
                     <div class="picker-field sim-premium-picker">
-                      <button type="button" class="picker-arrow" id="simCityPrev" aria-label="Ville précédente">‹</button>
+                      <button type="button" class="picker-arrow sim-picker-arrow sim-picker-arrow--prev" id="simCityPrev" aria-label="Ville précédente"></button>
                       <div class="picker-display">
                         <span class="picker-label" id="simCityLabel">Martigues</span>
                         <span class="picker-sublabel" id="simCitySublabel">Côte Bleue &amp; proximité</span>
                       </div>
-                      <button type="button" class="picker-arrow" id="simCityNext" aria-label="Ville suivante">›</button>
+                      <button type="button" class="picker-arrow sim-picker-arrow sim-picker-arrow--next" id="simCityNext" aria-label="Ville suivante"></button>
                     </div>
                     <select id="simCity" class="visually-hidden" aria-hidden="true" tabindex="-1">
                       <option value="martigues" selected>Martigues</option>
@@ -93,12 +93,12 @@
                   <div class="sim-field sim-premium-field">
                     <h2 class="sim-step-title">État général</h2>
                     <div class="picker-field sim-premium-picker">
-                      <button type="button" class="picker-arrow" id="simConditionPrev" aria-label="État précédent">‹</button>
+                      <button type="button" class="picker-arrow sim-picker-arrow sim-picker-arrow--prev" id="simConditionPrev" aria-label="État précédent"></button>
                       <div class="picker-display">
                         <span class="picker-label" id="simConditionLabel">Excellent</span>
                         <span class="picker-sublabel" id="simConditionSublabel">Très bon état général</span>
                       </div>
-                      <button type="button" class="picker-arrow" id="simConditionNext" aria-label="État suivant">›</button>
+                      <button type="button" class="picker-arrow sim-picker-arrow sim-picker-arrow--next" id="simConditionNext" aria-label="État suivant"></button>
                     </div>
                     <select id="simCondition" class="visually-hidden" aria-hidden="true" tabindex="-1">
                       <option value="excellent" selected>Excellent</option>
@@ -115,21 +115,21 @@
                   <div class="sim-field sim-step sim-premium-field" id="step-details">
                     <h2 class="sim-step-title">Nombre de couchages</h2>
                     <div class="stepper-field sim-premium-stepper">
-                      <button type="button" class="step-btn" data-step-target="simBeds" data-step-dir="-1">−</button>
-                      <input id="simBeds" type="number" min="1" max="14" value="4" />
-                      <button type="button" class="step-btn" data-step-target="simBeds" data-step-dir="1">+</button>
+                      <button type="button" class="step-btn" data-step-target="simBeds" data-step-dir="-1" aria-label="Diminuer le nombre de couchages"></button>
+                      <input id="simBeds" type="number" min="1" max="14" value="4" aria-label="Nombre de couchages" />
+                      <button type="button" class="step-btn" data-step-target="simBeds" data-step-dir="1" aria-label="Augmenter le nombre de couchages"></button>
                     </div>
                   </div>
 
                   <div class="sim-field sim-premium-field">
                     <h2 class="sim-step-title">Année de construction</h2>
                     <div class="picker-field sim-premium-picker">
-                      <button type="button" class="picker-arrow" id="simYearPrev" aria-label="Période précédente">‹</button>
+                      <button type="button" class="picker-arrow sim-picker-arrow sim-picker-arrow--prev" id="simYearPrev" aria-label="Période précédente"></button>
                       <div class="picker-display">
                         <span class="picker-label" id="simYearLabel">Après 2010</span>
                         <span class="picker-sublabel" id="simYearSublabel">Construction récente</span>
                       </div>
-                      <button type="button" class="picker-arrow" id="simYearNext" aria-label="Période suivante">›</button>
+                      <button type="button" class="picker-arrow sim-picker-arrow sim-picker-arrow--next" id="simYearNext" aria-label="Période suivante"></button>
                     </div>
                     <select id="simYear" class="visually-hidden" aria-hidden="true" tabindex="-1">
                       <option value="after2010" selected>Après 2010</option>
