@@ -18,37 +18,37 @@ body {
   margin: 0;
   font-family: Inter, Arial, sans-serif;
   color: var(--ink);
-  background: linear-gradient(135deg, #020305, #0a1a22);
+  background: radial-gradient(circle at top left, #0f1c16, #05080a 60%);
   overflow-x: clip;
   position: relative;
 }
 
-body::before,
+body::before {
+  content: "";
+  position: fixed;
+  top: -200px;
+  left: -200px;
+  width: 500px;
+  height: 500px;
+  background: rgba(0, 255, 150, 0.12);
+  filter: blur(150px);
+  z-index: -1;
+  pointer-events: none;
+}
+
 body::after {
   content: "";
   position: fixed;
   pointer-events: none;
   z-index: -1;
-  filter: blur(120px);
-  opacity: 0.95;
-}
-
-body::before {
-  width: 400px;
-  height: 400px;
-  top: -100px;
-  left: -100px;
+  width: 420px;
+  height: 420px;
+  bottom: -120px;
+  right: -120px;
   border-radius: 50%;
-  background: rgba(34, 240, 122, 0.08);
-}
-
-body::after {
-  width: 400px;
-  height: 400px;
-  bottom: -100px;
-  right: -100px;
-  border-radius: 50%;
-  background: rgba(20, 80, 100, 0.22);
+  background: rgba(15, 35, 45, 0.35);
+  filter: blur(130px);
+  opacity: 0.9;
 }
 
 .site-shell { min-height: 100vh; }
@@ -947,29 +947,8 @@ input.range-premium::-moz-range-track {
 
 /* ========== Simulateur — refonte premium (sombre, éditorial) ========== */
 body[data-page="simulateur"] {
-  background: linear-gradient(135deg, #020305, #0a1a22);
+  background: radial-gradient(circle at top left, #0f1c16, #05080a 60%);
   color: #e4e6eb;
-}
-
-body[data-page="simulateur"]::before {
-  width: min(90vw, 720px);
-  height: min(90vw, 720px);
-  top: -20%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: radial-gradient(circle, rgba(201, 169, 98, 0.12) 0%, transparent 55%);
-  opacity: 1;
-  filter: blur(80px);
-}
-
-body[data-page="simulateur"]::after {
-  width: 480px;
-  height: 480px;
-  bottom: -8%;
-  right: -5%;
-  background: radial-gradient(circle, rgba(34, 240, 122, 0.06) 0%, transparent 60%);
-  opacity: 1;
-  filter: blur(100px);
 }
 
 .sim-premium-page {
@@ -980,7 +959,7 @@ body[data-page="simulateur"]::after {
 }
 
 .sim-premium-topbar {
-  background: rgba(2, 3, 5, 0.85) !important;
+  background: rgba(5, 8, 10, 0.88) !important;
   backdrop-filter: blur(20px) saturate(1.2);
   -webkit-backdrop-filter: blur(20px) saturate(1.2);
   border: 1px solid rgba(255, 255, 255, 0.06) !important;
@@ -1062,11 +1041,11 @@ body[data-page="simulateur"]::after {
   margin: 0 0 2.75rem;
   border-radius: 0;
   /* Fond opaque : évite la superposition des lignes du contenu au scroll */
-  background: #020305;
-  background: linear-gradient(to bottom, #020305 65%, rgba(2, 3, 5, 0.98) 100%);
+  background: #05080a;
+  background: linear-gradient(to bottom, #05080a 65%, rgba(5, 8, 10, 0.98) 100%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow:
-    0 12px 24px rgba(8, 10, 14, 0.85),
+    0 12px 24px rgba(5, 8, 10, 0.9),
     0 1px 0 rgba(255, 255, 255, 0.04);
   position: sticky;
   top: 5.25rem;
