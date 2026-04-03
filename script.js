@@ -1,44 +1,44 @@
 const propertyData = {
   verrieres: {
-    title: "Les Verrieres Secretes",
+    title: "Les Verrières Secrètes",
     image: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
-    description: "Elegant T3 renove au coeur du centre historique, tres recherche pour les sejours loisirs.",
-    details: ["Taux d'occupation: 77%", "Revenus annuels: 34 000 EUR", "Note moyenne: 4.91/5"]
+    description: "Élégant T3 rénové au cœur du centre historique, très recherché pour les séjours loisirs.",
+    details: ["Taux d'occupation : 77 %", "Revenus annuels : 34 000 €", "Note moyenne : 4,91 / 5"]
   },
   ecrin: {
-    title: "L'ecrin",
+    title: "L'Écrin",
     image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
-    description: "Chalet premium en montagne, experience haut de gamme pour familles et groupes.",
-    details: ["Taux d'occupation: 60%", "Revenus annuels: 65 000 EUR", "Note moyenne: 5/5"]
+    description: "Chalet premium en montagne, expérience haut de gamme pour familles et groupes.",
+    details: ["Taux d'occupation : 60 %", "Revenus annuels : 65 000 €", "Note moyenne : 5 / 5"]
   },
   vitapasibla: {
     title: "Vitapasibla",
     image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80",
-    description: "Villa avec piscine privee et vue mer, ideal pour grands groupes jusqu'a 12 personnes.",
-    details: ["Taux d'occupation: 55%", "Revenus annuels: 65 000 EUR", "Note moyenne: 5/5"]
+    description: "Villa avec piscine privée et vue mer, idéale pour grands groupes jusqu'à 12 personnes.",
+    details: ["Taux d'occupation : 55 %", "Revenus annuels : 65 000 €", "Note moyenne : 5 / 5"]
   },
   "bleu-horizon": {
     title: "Bleu Horizon",
     image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=80",
     description: "Appartement design proche des plages, excellent positionnement saisonnier.",
-    details: ["Taux d'occupation: 73%", "Revenus annuels: 42 000 EUR", "Note moyenne: 4.86/5"]
+    details: ["Taux d'occupation : 73 %", "Revenus annuels : 42 000 €", "Note moyenne : 4,86 / 5"]
   },
   "villa-alba": {
     title: "Villa Alba",
     image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=80",
-    description: "Maison familiale avec jardin, produit ideal pour sejours longs en ete.",
-    details: ["Taux d'occupation: 68%", "Revenus annuels: 58 000 EUR", "Note moyenne: 4.9/5"]
+    description: "Maison familiale avec jardin, idéale pour les longs séjours estivaux.",
+    details: ["Taux d'occupation : 68 %", "Revenus annuels : 58 000 €", "Note moyenne : 4,9 / 5"]
   },
   "domaine-sea": {
     title: "Domaine Sea",
     image: "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1200&q=80",
-    description: "Grand bien premium a forte capacite, demande constante en haute saison.",
-    details: ["Taux d'occupation: 62%", "Revenus annuels: 71 000 EUR", "Note moyenne: 4.88/5"]
+    description: "Grand bien premium à forte capacité, demande constante en haute saison.",
+    details: ["Taux d'occupation : 62 %", "Revenus annuels : 71 000 €", "Note moyenne : 4,88 / 5"]
   }
 };
 
 function formatEur(value) {
-  return `${Math.round(value).toLocaleString("fr-FR")} EUR`;
+  return `${Math.round(value).toLocaleString("fr-FR")}\u00a0€`;
 }
 
 function initSidebar() {
@@ -105,29 +105,29 @@ function initModals() {
 }
 
 const SIM_TYPE_META = {
-  studio: { label: "Studio", sub: "Ideal centre-ville & courte duree" },
-  t2: { label: "T2", sub: "Deux pieces, fort potentiel locatif" },
-  t3: { label: "T3", sub: "Familles & sejours moyens" },
-  t4: { label: "T4", sub: "Grande capacite, premium" },
-  maison: { label: "Maison", sub: "Villa ou maison avec exterieur" }
+  studio: { label: "Studio", sub: "Idéal centre-ville & courte durée" },
+  t2: { label: "T2", sub: "Deux pièces, fort potentiel locatif" },
+  t3: { label: "T3", sub: "Familles & séjours moyens" },
+  t4: { label: "T4", sub: "Grande capacité, premium" },
+  maison: { label: "Maison", sub: "Villa ou maison avec extérieur" }
 };
 
 const SIM_CITY_META = {
-  martigues: { label: "Martigues", sub: "Cote Bleue & proximite" },
+  martigues: { label: "Martigues", sub: "Côte Bleue & proximité" },
   carry: { label: "Carry-le-Rouet", sub: "Littoral haut de gamme" },
-  istres: { label: "Istres", sub: "Calme & strategie tarifaire" },
+  istres: { label: "Istres", sub: "Calme & stratégie tarifaire" },
   marseille: { label: "Marseille", sub: "Forte demande urbaine" }
 };
 
 const SIM_CONDITION_META = {
-  excellent: { label: "Excellent", sub: "Tres bon etat general" },
-  bon: { label: "Bon", sub: "Etat entretenu" },
-  moyen: { label: "Moyen", sub: "Rafraichissement possible" }
+  excellent: { label: "Excellent", sub: "Très bon état général" },
+  bon: { label: "Bon", sub: "État entretenu" },
+  moyen: { label: "Moyen", sub: "Rafraîchissement possible" }
 };
 
 const SIM_YEAR_META = {
-  after2010: { label: "Apres 2010", sub: "Construction recente" },
-  between2000_2010: { label: "2000 - 2010", sub: "Periode intermediaire" },
+  after2010: { label: "Après 2010", sub: "Construction récente" },
+  between2000_2010: { label: "2000 – 2010", sub: "Période intermédiaire" },
   before2000: { label: "Avant 2000", sub: "Bien plus ancien" }
 };
 
@@ -341,7 +341,7 @@ function initForms() {
   document.querySelectorAll("form").forEach((form) => {
     form.addEventListener("submit", (event) => {
       event.preventDefault();
-      alert("Merci ! Votre demande a bien ete recue. Nous revenons vers vous rapidement.");
+      alert("Merci ! Votre demande a bien été reçue. Nous revenons vers vous rapidement.");
     });
   });
 }
