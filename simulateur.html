@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulateur | Lou Cleou</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="simulateur">
+    <div class="site-shell">
+      <aside class="sidebar" id="sidebar">
+        <a href="./index.html" class="brand">Lou Cleou</a>
+        <nav class="sidebar-nav">
+          <a href="./index.html">Accueil</a>
+          <a href="./index.html#services">Services</a>
+          <a href="./hebergements.html">Hebergements</a>
+          <a href="./simulateur.html">Simulateur</a>
+          <a href="./contact.html">Contact</a>
+        </nav>
+      </aside>
+      <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+      <header class="topbar glass">
+        <button id="menuToggle" class="icon-btn" aria-label="Ouvrir le menu">☰</button>
+        <a href="./index.html" class="topbar-logo">Lou Cleou</a>
+        <a href="./contact.html" class="btn btn-primary">Contact</a>
+      </header>
+
+      <main class="main-content container page-padding reveal content-bounded">
+        <h1>Mon estimation immobiliere</h1>
+        <p class="lead">Dites-nous en davantage et obtenez une estimation locative rapide.</p>
+
+        <nav class="sim-anchor-nav glass" aria-label="Etapes du simulateur">
+          <a href="#step-type" class="sim-anchor">Type</a>
+          <a href="#step-city" class="sim-anchor">Ville</a>
+          <a href="#step-details" class="sim-anchor">Infos</a>
+          <a href="#step-equipment" class="sim-anchor">Atouts</a>
+          <a href="#step-results" class="sim-anchor">Resultats</a>
+        </nav>
+
+        <section class="simulator-panel glass sim-panel-tight">
+          <div class="sim-layout-grid">
+            <div class="sim-field sim-step" id="step-type">
+              <h2 class="sim-step-title">Type de bien</h2>
+              <div class="picker-field">
+                <button type="button" class="picker-arrow" id="simTypePrev" aria-label="Type precedent">‹</button>
+                <div class="picker-display">
+                  <span class="picker-label" id="simTypeLabel">T2</span>
+                  <span class="picker-sublabel" id="simTypeSublabel">Appartement deux pieces</span>
+                </div>
+                <button type="button" class="picker-arrow" id="simTypeNext" aria-label="Type suivant">›</button>
+              </div>
+              <select id="simType" class="visually-hidden" aria-hidden="true" tabindex="-1">
+                <option value="studio">Studio</option>
+                <option value="t2" selected>T2</option>
+                <option value="t3">T3</option>
+                <option value="t4">T4</option>
+                <option value="maison">Maison</option>
+              </select>
+            </div>
+
+            <div class="sim-field sim-step" id="step-city">
+              <h2 class="sim-step-title">Ville</h2>
+              <div class="picker-field">
+                <button type="button" class="picker-arrow" id="simCityPrev" aria-label="Ville precedente">‹</button>
+                <div class="picker-display">
+                  <span class="picker-label" id="simCityLabel">Martigues</span>
+                  <span class="picker-sublabel" id="simCitySublabel">Cote Bleue & proximite</span>
+                </div>
+                <button type="button" class="picker-arrow" id="simCityNext" aria-label="Ville suivante">›</button>
+              </div>
+              <select id="simCity" class="visually-hidden" aria-hidden="true" tabindex="-1">
+                <option value="martigues" selected>Martigues</option>
+                <option value="carry">Carry-le-Rouet</option>
+                <option value="istres">Istres</option>
+                <option value="marseille">Marseille</option>
+              </select>
+            </div>
+
+            <div class="sim-field">
+              <h2 class="sim-step-title">Etat general</h2>
+              <div class="picker-field">
+                <button type="button" class="picker-arrow" id="simConditionPrev" aria-label="Etat precedent">‹</button>
+                <div class="picker-display">
+                  <span class="picker-label" id="simConditionLabel">Excellent</span>
+                  <span class="picker-sublabel" id="simConditionSublabel">Tres bon etat general</span>
+                </div>
+                <button type="button" class="picker-arrow" id="simConditionNext" aria-label="Etat suivant">›</button>
+              </div>
+              <select id="simCondition" class="visually-hidden" aria-hidden="true" tabindex="-1">
+                <option value="excellent" selected>Excellent</option>
+                <option value="bon">Bon</option>
+                <option value="moyen">Moyen</option>
+              </select>
+            </div>
+
+            <div class="sim-field">
+              <h2 class="sim-step-title">Surface habitable</h2>
+              <input type="number" min="10" step="1" placeholder="m2" />
+            </div>
+
+            <div class="sim-field sim-step" id="step-details">
+              <h2 class="sim-step-title">Nombre de couchages</h2>
+              <div class="stepper-field">
+                <button type="button" class="step-btn" data-step-target="simBeds" data-step-dir="-1">-</button>
+                <input id="simBeds" type="number" min="1" max="14" value="4" />
+                <button type="button" class="step-btn" data-step-target="simBeds" data-step-dir="1">+</button>
+              </div>
+            </div>
+
+            <div class="sim-field">
+              <h2 class="sim-step-title">Annee de construction</h2>
+              <div class="picker-field">
+                <button type="button" class="picker-arrow" id="simYearPrev" aria-label="Periode precedente">‹</button>
+                <div class="picker-display">
+                  <span class="picker-label" id="simYearLabel">Apres 2010</span>
+                  <span class="picker-sublabel" id="simYearSublabel">Construction recente</span>
+                </div>
+                <button type="button" class="picker-arrow" id="simYearNext" aria-label="Periode suivante">›</button>
+              </div>
+              <select id="simYear" class="visually-hidden" aria-hidden="true" tabindex="-1">
+                <option value="after2010" selected>Apres 2010</option>
+                <option value="between2000_2010">2000 - 2010</option>
+                <option value="before2000">Avant 2000</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="sim-step compact-slider-wrap">
+            <h2 class="sim-step-title">Objectif de revenus mensuel</h2>
+            <div class="range-wrap">
+              <input id="simSlider" class="range-premium" type="range" min="500" max="6000" value="2600" step="100" />
+              <div class="range-value-pill" id="simSliderValue">2 600 EUR</div>
+            </div>
+          </div>
+
+          <fieldset class="check-grid check-grid-premium sim-step" id="step-equipment">
+            <legend>Equipements</legend>
+            <label class="check-pill"><input type="checkbox" value="piscine" /> <span>Piscine</span></label>
+            <label class="check-pill"><input type="checkbox" value="terrasse" /> <span>Terrasse</span></label>
+            <label class="check-pill"><input type="checkbox" value="vue" /> <span>Vue mer</span></label>
+            <label class="check-pill"><input type="checkbox" value="jacuzzi" /> <span>Jacuzzi</span></label>
+            <label class="check-pill"><input type="checkbox" value="parking" /> <span>Parking</span></label>
+          </fieldset>
+
+          <div class="result-box sim-step" id="step-results">
+            <p>Revenus mensuels estimes</p>
+            <h2 id="simMonthly">0 EUR</h2>
+            <p>Revenus annuels estimes</p>
+            <h3 id="simYearly">0 EUR</h3>
+            <button type="button" class="btn btn-primary">Demander une estimation complete</button>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer-lou">
+        <div class="container footer-grid">
+          <div class="footer-brand-block">
+            <div class="footer-logo-card">Lou Cleou<br /><span>Conciergerie du Sud</span></div>
+          </div>
+          <div>
+            <h3>Contact</h3>
+            <p>Martigues, Istres, Cote Bleue (Carry-le-Rouet et alentours)</p>
+            <p><a href="tel:+33764536196">+33 7 64 53 61 96</a></p>
+            <p><a href="mailto:contact@loucleou.com">contact@loucleou.com</a></p>
+            <div class="footer-socials">
+              <a href="https://www.linkedin.com/company/lou-cl%C3%A9ou-conciergerie-du-sud/?viewAsMember=true" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a href="https://www.instagram.com/loucleou_conciergerie" target="_blank" rel="noreferrer">Instagram</a>
+            </div>
+          </div>
+          <div>
+            <h3>Liens</h3>
+            <ul class="footer-links">
+              <li><a href="./index.html">Accueil</a></li>
+              <li><a href="./index.html#services">Nos services</a></li>
+              <li><a href="./hebergements.html">Nos hebergements</a></li>
+              <li><a href="./simulateur.html">Simulateur de rentabilite</a></li>
+              <li><a href="./contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="container footer-bottom-inner">
+            <p>Copyright © 2026 Lou Cleou - Conciergerie du Sud</p>
+            <p>Powered by Lou Cleou - Conciergerie du Sud</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

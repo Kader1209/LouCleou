@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Lou Cleou</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="contact">
+    <div class="site-shell">
+      <aside class="sidebar" id="sidebar">
+        <a href="./index.html" class="brand">Lou Cleou</a>
+        <nav class="sidebar-nav">
+          <a href="./index.html">Accueil</a>
+          <a href="./index.html#services">Services</a>
+          <a href="./hebergements.html">Hebergements</a>
+          <a href="./simulateur.html">Simulateur</a>
+          <a href="./contact.html">Contact</a>
+        </nav>
+      </aside>
+      <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+      <header class="topbar glass">
+        <button id="menuToggle" class="icon-btn" aria-label="Ouvrir le menu">☰</button>
+        <a href="./index.html" class="topbar-logo">Lou Cleou</a>
+        <a href="./simulateur.html" class="btn btn-primary">Estimer mon bien</a>
+      </header>
+
+      <main class="main-content container page-padding reveal">
+        <section class="contact-wrapper glass">
+          <h1>Contact</h1>
+          <p class="lead">Parlons de votre bien et de son potentiel en location courte duree.</p>
+          <div class="contact-infos-inline">
+            <p><strong>Adresse :</strong> 3 Rue du Flamant Rose, 13500 Martigues</p>
+            <p><strong>Telephone :</strong> <a href="tel:+33764536196">+33 7 64 53 61 96</a></p>
+            <p><strong>Email :</strong> <a href="mailto:contact@loucleou.com">contact@loucleou.com</a></p>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <label>Nom
+              <input type="text" name="name" required />
+            </label>
+            <label>Email
+              <input type="email" name="email" required />
+            </label>
+            <label>Message
+              <textarea rows="5" name="message" required></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit">Envoyer</button>
+          </form>
+        </section>
+      </main>
+
+      <footer class="site-footer-lou">
+        <div class="container footer-grid">
+          <div class="footer-brand-block">
+            <div class="footer-logo-card">Lou Cleou<br /><span>Conciergerie du Sud</span></div>
+          </div>
+          <div>
+            <h3>Contact</h3>
+            <p>Martigues, Istres, Cote Bleue (Carry-le-Rouet et alentours)</p>
+            <p><a href="tel:+33764536196">+33 7 64 53 61 96</a></p>
+            <p><a href="mailto:contact@loucleou.com">contact@loucleou.com</a></p>
+            <div class="footer-socials">
+              <a href="https://www.linkedin.com/company/lou-cl%C3%A9ou-conciergerie-du-sud/?viewAsMember=true" target="_blank" rel="noreferrer">LinkedIn</a>
+              <a href="https://www.instagram.com/loucleou_conciergerie" target="_blank" rel="noreferrer">Instagram</a>
+            </div>
+          </div>
+          <div>
+            <h3>Liens</h3>
+            <ul class="footer-links">
+              <li><a href="./index.html">Accueil</a></li>
+              <li><a href="./index.html#services">Nos services</a></li>
+              <li><a href="./hebergements.html">Nos hebergements</a></li>
+              <li><a href="./simulateur.html">Simulateur de rentabilite</a></li>
+              <li><a href="./contact.html">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="container footer-bottom-inner">
+            <p>Copyright © 2026 Lou Cleou - Conciergerie du Sud</p>
+            <p>Powered by Lou Cleou - Conciergerie du Sud</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
