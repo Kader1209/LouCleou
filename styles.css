@@ -18,7 +18,7 @@ body {
   margin: 0;
   font-family: Inter, Arial, sans-serif;
   color: var(--ink);
-  background: radial-gradient(circle at top left, #0f1c16, #05080a 60%);
+  background: linear-gradient(135deg, #f7f9f8, #e3ece8);
   overflow-x: clip;
   position: relative;
 }
@@ -26,14 +26,16 @@ body {
 body::before {
   content: "";
   position: fixed;
-  top: -200px;
-  left: -200px;
-  width: 500px;
-  height: 500px;
-  background: rgba(0, 255, 150, 0.12);
-  filter: blur(150px);
+  top: -120px;
+  left: -120px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: rgba(122, 143, 107, 0.2);
+  filter: blur(120px);
   z-index: -1;
   pointer-events: none;
+  opacity: 0.95;
 }
 
 body::after {
@@ -41,14 +43,21 @@ body::after {
   position: fixed;
   pointer-events: none;
   z-index: -1;
-  width: 420px;
-  height: 420px;
-  bottom: -120px;
-  right: -120px;
+  width: 400px;
+  height: 400px;
+  bottom: -100px;
+  right: -100px;
   border-radius: 50%;
-  background: rgba(15, 35, 45, 0.35);
-  filter: blur(130px);
-  opacity: 0.9;
+  background: rgba(30, 58, 95, 0.14);
+  filter: blur(120px);
+  opacity: 0.95;
+}
+
+/* Carte vitrée réutilisable (glassmorphism léger) */
+.card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .site-shell { min-height: 100vh; }
@@ -949,6 +958,27 @@ input.range-premium::-moz-range-track {
 body[data-page="simulateur"] {
   background: radial-gradient(circle at top left, #0f1c16, #05080a 60%);
   color: #e4e6eb;
+}
+
+body[data-page="simulateur"]::before {
+  top: -200px;
+  left: -200px;
+  width: 500px;
+  height: 500px;
+  border-radius: 0;
+  background: rgba(0, 255, 150, 0.12);
+  filter: blur(150px);
+  opacity: 1;
+}
+
+body[data-page="simulateur"]::after {
+  width: 420px;
+  height: 420px;
+  bottom: -120px;
+  right: -120px;
+  background: rgba(15, 35, 45, 0.35);
+  filter: blur(130px);
+  opacity: 0.9;
 }
 
 .sim-premium-page {
