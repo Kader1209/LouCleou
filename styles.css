@@ -26,31 +26,25 @@ body {
 body::before {
   content: "";
   position: fixed;
-  top: -120px;
-  left: -120px;
-  width: 420px;
-  height: 420px;
-  border-radius: 50%;
-  background: rgba(122, 143, 107, 0.2);
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: rgba(0, 255, 150, 0.08);
   filter: blur(120px);
   z-index: -1;
   pointer-events: none;
-  opacity: 0.95;
 }
 
+/* Halo bas-droite (page simulateur uniquement, voir bloc simulateur) */
 body::after {
   content: "";
   position: fixed;
   pointer-events: none;
   z-index: -1;
-  width: 400px;
-  height: 400px;
-  bottom: -100px;
-  right: -100px;
-  border-radius: 50%;
-  background: rgba(30, 58, 95, 0.14);
-  filter: blur(120px);
-  opacity: 0.95;
+  width: 0;
+  height: 0;
+  opacity: 0;
 }
 
 /* Carte vitrée réutilisable (glassmorphism léger) */
@@ -58,6 +52,11 @@ body::after {
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+}
+
+.logo {
+  color: #00ff9c;
+  text-shadow: 0 0 12px rgba(0, 255, 150, 0.3);
 }
 
 .site-shell { min-height: 100vh; }
@@ -117,6 +116,11 @@ body::after {
     0 0 12px rgba(34, 240, 122, 0.45);
 }
 
+.topbar-logo.logo {
+  color: #00ff9c;
+  text-shadow: 0 0 12px rgba(0, 255, 150, 0.3);
+}
+
 .icon-btn {
   border: 0;
   background: linear-gradient(135deg, rgba(30, 58, 95, 0.14), rgba(122, 143, 107, 0.2));
@@ -154,6 +158,11 @@ body::after {
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 800;
+}
+
+.brand.logo {
+  color: #00ff9c;
+  text-shadow: 0 0 12px rgba(0, 255, 150, 0.3);
 }
 
 .sidebar-nav { margin-top: 2rem; display: grid; gap: 0.7rem; }
@@ -972,13 +981,18 @@ body[data-page="simulateur"]::before {
 }
 
 body[data-page="simulateur"]::after {
+  content: "";
+  position: fixed;
+  pointer-events: none;
+  z-index: -1;
   width: 420px;
   height: 420px;
   bottom: -120px;
   right: -120px;
+  opacity: 0.9;
+  border-radius: 50%;
   background: rgba(15, 35, 45, 0.35);
   filter: blur(130px);
-  opacity: 0.9;
 }
 
 .sim-premium-page {
