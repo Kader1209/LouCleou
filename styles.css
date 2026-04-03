@@ -18,7 +18,7 @@ body {
   margin: 0;
   font-family: Inter, Arial, sans-serif;
   color: var(--ink);
-  background: linear-gradient(135deg, #eef2f0, #dfe7e3, #cfd8d3);
+  background: linear-gradient(135deg, #020305, #0a1a22);
   overflow-x: clip;
   position: relative;
 }
@@ -39,7 +39,7 @@ body::before {
   top: -100px;
   left: -100px;
   border-radius: 50%;
-  background: rgba(122, 143, 107, 0.2);
+  background: rgba(34, 240, 122, 0.08);
 }
 
 body::after {
@@ -48,7 +48,7 @@ body::after {
   bottom: -100px;
   right: -100px;
   border-radius: 50%;
-  background: rgba(30, 58, 95, 0.2);
+  background: rgba(20, 80, 100, 0.22);
 }
 
 .site-shell { min-height: 100vh; }
@@ -947,7 +947,7 @@ input.range-premium::-moz-range-track {
 
 /* ========== Simulateur — refonte premium (sombre, éditorial) ========== */
 body[data-page="simulateur"] {
-  background: #080a0e;
+  background: linear-gradient(135deg, #020305, #0a1a22);
   color: #e4e6eb;
 }
 
@@ -976,11 +976,11 @@ body[data-page="simulateur"]::after {
   padding-top: 6.5rem;
   padding-bottom: 2.5rem;
   min-width: 0;
-  background: #080a0e;
+  background: transparent;
 }
 
 .sim-premium-topbar {
-  background: rgba(8, 10, 14, 0.82) !important;
+  background: rgba(2, 3, 5, 0.85) !important;
   backdrop-filter: blur(20px) saturate(1.2);
   -webkit-backdrop-filter: blur(20px) saturate(1.2);
   border: 1px solid rgba(255, 255, 255, 0.06) !important;
@@ -1049,7 +1049,7 @@ body[data-page="simulateur"]::after {
 .sim-premium-body {
   padding-bottom: 2rem;
   padding-top: 0.25rem;
-  background: #080a0e;
+  background: transparent;
   position: relative;
   z-index: 1;
 }
@@ -1062,8 +1062,8 @@ body[data-page="simulateur"]::after {
   margin: 0 0 2.75rem;
   border-radius: 0;
   /* Fond opaque : évite la superposition des lignes du contenu au scroll */
-  background: #080a0e;
-  background: linear-gradient(to bottom, #080a0e 70%, rgba(8, 10, 14, 0.98) 100%);
+  background: #020305;
+  background: linear-gradient(to bottom, #020305 65%, rgba(2, 3, 5, 0.98) 100%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow:
     0 12px 24px rgba(8, 10, 14, 0.85),
@@ -1146,7 +1146,7 @@ body[data-page="simulateur"]::after {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem 1.5rem;
-  background: #080a0e;
+  background: transparent;
 }
 
 .sim-premium-field {
