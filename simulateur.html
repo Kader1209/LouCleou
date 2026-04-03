@@ -7,7 +7,7 @@
     <meta name="description" content="Estimez vos revenus locatifs en location courte durée avec le simulateur LouCleou." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body data-page="simulateur">
@@ -24,140 +24,156 @@
       </aside>
       <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
 
-      <header class="topbar glass">
-        <button id="menuToggle" class="icon-btn" aria-label="Ouvrir le menu">☰</button>
+      <header class="topbar glass sim-premium-topbar">
+        <button id="menuToggle" class="icon-btn sim-premium-icon-btn" aria-label="Ouvrir le menu">☰</button>
         <a href="./index.html" class="topbar-logo">LouCleou</a>
-        <a href="./contact.html" class="btn btn-primary">Contact</a>
+        <a href="./contact.html" class="btn btn-primary sim-premium-cta">Contact</a>
       </header>
 
-      <main class="main-content container page-padding reveal content-bounded">
-        <h1>Mon estimation immobilière</h1>
-        <p class="lead">Dites-nous en davantage et obtenez une estimation locative rapide.</p>
+      <main class="main-content sim-premium-page reveal">
+        <header class="sim-premium-hero container content-bounded">
+          <p class="sim-premium-eyebrow">Outil propriétaires</p>
+          <h1 class="sim-premium-title">Projection de rentabilité</h1>
+          <p class="lead sim-premium-subtitle">
+            Paramétrez votre bien — visualisez une fourchette indicative de revenus locatifs, mise à jour en direct.
+          </p>
+          <div class="sim-premium-rule" aria-hidden="true"></div>
+        </header>
 
-        <nav class="sim-anchor-nav glass" aria-label="Étapes du simulateur">
-          <a href="#step-type" class="sim-anchor">Type</a>
-          <a href="#step-city" class="sim-anchor">Ville</a>
-          <a href="#step-details" class="sim-anchor">Infos</a>
-          <a href="#step-equipment" class="sim-anchor">Atouts</a>
-          <a href="#step-results" class="sim-anchor">Résultats</a>
-        </nav>
+        <div class="container content-bounded sim-premium-body">
+          <nav class="sim-anchor-nav sim-premium-nav" aria-label="Étapes du simulateur">
+            <a href="#step-type" class="sim-anchor"><span class="sim-premium-nav__n">01</span><span class="sim-premium-nav__t">Type</span></a>
+            <a href="#step-city" class="sim-anchor"><span class="sim-premium-nav__n">02</span><span class="sim-premium-nav__t">Ville</span></a>
+            <a href="#step-details" class="sim-anchor"><span class="sim-premium-nav__n">03</span><span class="sim-premium-nav__t">Capacité</span></a>
+            <a href="#step-equipment" class="sim-anchor"><span class="sim-premium-nav__n">04</span><span class="sim-premium-nav__t">Atouts</span></a>
+            <a href="#step-results" class="sim-anchor"><span class="sim-premium-nav__n">05</span><span class="sim-premium-nav__t">Synthèse</span></a>
+          </nav>
 
-        <section class="simulator-panel glass sim-panel-tight">
-          <div class="sim-layout-grid">
-            <div class="sim-field sim-step" id="step-type">
-              <h2 class="sim-step-title">Type de bien</h2>
-              <div class="picker-field">
-                <button type="button" class="picker-arrow" id="simTypePrev" aria-label="Type précédent">‹</button>
-                <div class="picker-display">
-                  <span class="picker-label" id="simTypeLabel">T2</span>
-                  <span class="picker-sublabel" id="simTypeSublabel">Appartement deux pièces</span>
+          <div class="sim-premium-workspace">
+            <div class="sim-premium-form">
+              <section class="simulator-panel sim-premium-panel">
+                <div class="sim-layout-grid sim-premium-grid">
+                  <div class="sim-field sim-step sim-premium-field" id="step-type">
+                    <h2 class="sim-step-title">Type de bien</h2>
+                    <div class="picker-field sim-premium-picker">
+                      <button type="button" class="picker-arrow" id="simTypePrev" aria-label="Type précédent">‹</button>
+                      <div class="picker-display">
+                        <span class="picker-label" id="simTypeLabel">T2</span>
+                        <span class="picker-sublabel" id="simTypeSublabel">Deux pièces, fort potentiel locatif</span>
+                      </div>
+                      <button type="button" class="picker-arrow" id="simTypeNext" aria-label="Type suivant">›</button>
+                    </div>
+                    <select id="simType" class="visually-hidden" aria-hidden="true" tabindex="-1">
+                      <option value="studio">Studio</option>
+                      <option value="t2" selected>T2</option>
+                      <option value="t3">T3</option>
+                      <option value="t4">T4</option>
+                      <option value="maison">Maison</option>
+                    </select>
+                  </div>
+
+                  <div class="sim-field sim-step sim-premium-field" id="step-city">
+                    <h2 class="sim-step-title">Ville</h2>
+                    <div class="picker-field sim-premium-picker">
+                      <button type="button" class="picker-arrow" id="simCityPrev" aria-label="Ville précédente">‹</button>
+                      <div class="picker-display">
+                        <span class="picker-label" id="simCityLabel">Martigues</span>
+                        <span class="picker-sublabel" id="simCitySublabel">Côte Bleue &amp; proximité</span>
+                      </div>
+                      <button type="button" class="picker-arrow" id="simCityNext" aria-label="Ville suivante">›</button>
+                    </div>
+                    <select id="simCity" class="visually-hidden" aria-hidden="true" tabindex="-1">
+                      <option value="martigues" selected>Martigues</option>
+                      <option value="carry">Carry-le-Rouet</option>
+                      <option value="istres">Istres</option>
+                      <option value="marseille">Marseille</option>
+                    </select>
+                  </div>
+
+                  <div class="sim-field sim-premium-field">
+                    <h2 class="sim-step-title">État général</h2>
+                    <div class="picker-field sim-premium-picker">
+                      <button type="button" class="picker-arrow" id="simConditionPrev" aria-label="État précédent">‹</button>
+                      <div class="picker-display">
+                        <span class="picker-label" id="simConditionLabel">Excellent</span>
+                        <span class="picker-sublabel" id="simConditionSublabel">Très bon état général</span>
+                      </div>
+                      <button type="button" class="picker-arrow" id="simConditionNext" aria-label="État suivant">›</button>
+                    </div>
+                    <select id="simCondition" class="visually-hidden" aria-hidden="true" tabindex="-1">
+                      <option value="excellent" selected>Excellent</option>
+                      <option value="bon">Bon</option>
+                      <option value="moyen">Moyen</option>
+                    </select>
+                  </div>
+
+                  <div class="sim-field sim-premium-field">
+                    <h2 class="sim-step-title">Surface habitable</h2>
+                    <input class="sim-premium-input" type="number" min="10" step="1" placeholder="m²" aria-label="Surface en mètres carrés" />
+                  </div>
+
+                  <div class="sim-field sim-step sim-premium-field" id="step-details">
+                    <h2 class="sim-step-title">Nombre de couchages</h2>
+                    <div class="stepper-field sim-premium-stepper">
+                      <button type="button" class="step-btn" data-step-target="simBeds" data-step-dir="-1">−</button>
+                      <input id="simBeds" type="number" min="1" max="14" value="4" />
+                      <button type="button" class="step-btn" data-step-target="simBeds" data-step-dir="1">+</button>
+                    </div>
+                  </div>
+
+                  <div class="sim-field sim-premium-field">
+                    <h2 class="sim-step-title">Année de construction</h2>
+                    <div class="picker-field sim-premium-picker">
+                      <button type="button" class="picker-arrow" id="simYearPrev" aria-label="Période précédente">‹</button>
+                      <div class="picker-display">
+                        <span class="picker-label" id="simYearLabel">Après 2010</span>
+                        <span class="picker-sublabel" id="simYearSublabel">Construction récente</span>
+                      </div>
+                      <button type="button" class="picker-arrow" id="simYearNext" aria-label="Période suivante">›</button>
+                    </div>
+                    <select id="simYear" class="visually-hidden" aria-hidden="true" tabindex="-1">
+                      <option value="after2010" selected>Après 2010</option>
+                      <option value="between2000_2010">2000 – 2010</option>
+                      <option value="before2000">Avant 2000</option>
+                    </select>
+                  </div>
                 </div>
-                <button type="button" class="picker-arrow" id="simTypeNext" aria-label="Type suivant">›</button>
-              </div>
-              <select id="simType" class="visually-hidden" aria-hidden="true" tabindex="-1">
-                <option value="studio">Studio</option>
-                <option value="t2" selected>T2</option>
-                <option value="t3">T3</option>
-                <option value="t4">T4</option>
-                <option value="maison">Maison</option>
-              </select>
-            </div>
 
-            <div class="sim-field sim-step" id="step-city">
-              <h2 class="sim-step-title">Ville</h2>
-              <div class="picker-field">
-                <button type="button" class="picker-arrow" id="simCityPrev" aria-label="Ville précédente">‹</button>
-                <div class="picker-display">
-                  <span class="picker-label" id="simCityLabel">Martigues</span>
-                  <span class="picker-sublabel" id="simCitySublabel">Côte Bleue &amp; proximité</span>
+                <div class="sim-step compact-slider-wrap sim-premium-slider-block">
+                  <h2 class="sim-step-title">Objectif de revenus mensuel</h2>
+                  <p class="sim-premium-hint">Indicatif — ajustez selon vos attentes.</p>
+                  <div class="range-wrap">
+                    <input id="simSlider" class="range-premium sim-premium-range" type="range" min="500" max="6000" value="2600" step="100" />
+                    <div class="range-value-pill sim-premium-range-value" id="simSliderValue">2&nbsp;600&nbsp;€</div>
+                  </div>
                 </div>
-                <button type="button" class="picker-arrow" id="simCityNext" aria-label="Ville suivante">›</button>
-              </div>
-              <select id="simCity" class="visually-hidden" aria-hidden="true" tabindex="-1">
-                <option value="martigues" selected>Martigues</option>
-                <option value="carry">Carry-le-Rouet</option>
-                <option value="istres">Istres</option>
-                <option value="marseille">Marseille</option>
-              </select>
+
+                <fieldset class="check-grid check-grid-premium sim-step sim-premium-equip" id="step-equipment">
+                  <legend>Équipements</legend>
+                  <label class="check-pill sim-premium-check"><input type="checkbox" value="piscine" /> <span>Piscine</span></label>
+                  <label class="check-pill sim-premium-check"><input type="checkbox" value="terrasse" /> <span>Terrasse</span></label>
+                  <label class="check-pill sim-premium-check"><input type="checkbox" value="vue" /> <span>Vue mer</span></label>
+                  <label class="check-pill sim-premium-check"><input type="checkbox" value="jacuzzi" /> <span>Jacuzzi</span></label>
+                  <label class="check-pill sim-premium-check"><input type="checkbox" value="parking" /> <span>Parking</span></label>
+                </fieldset>
+              </section>
             </div>
 
-            <div class="sim-field">
-              <h2 class="sim-step-title">État général</h2>
-              <div class="picker-field">
-                <button type="button" class="picker-arrow" id="simConditionPrev" aria-label="État précédent">‹</button>
-                <div class="picker-display">
-                  <span class="picker-label" id="simConditionLabel">Excellent</span>
-                  <span class="picker-sublabel" id="simConditionSublabel">Très bon état général</span>
-                </div>
-                <button type="button" class="picker-arrow" id="simConditionNext" aria-label="État suivant">›</button>
+            <aside class="sim-premium-aside" aria-label="Résultats de l'estimation">
+              <div class="result-box sim-step sim-premium-result" id="step-results">
+                <p class="sim-premium-result-label">Revenus mensuels estimés</p>
+                <h2 class="sim-premium-result-num" id="simMonthly">0&nbsp;€</h2>
+                <p class="sim-premium-result-label">Revenus annuels estimés</p>
+                <h3 class="sim-premium-result-year" id="simYearly">0&nbsp;€</h3>
+                <p class="sim-premium-disclaimer">Estimation indicative non contractuelle, basée sur les critères saisis.</p>
+                <a href="./contact.html" class="btn btn-primary sim-premium-result-btn">Étude personnalisée</a>
               </div>
-              <select id="simCondition" class="visually-hidden" aria-hidden="true" tabindex="-1">
-                <option value="excellent" selected>Excellent</option>
-                <option value="bon">Bon</option>
-                <option value="moyen">Moyen</option>
-              </select>
-            </div>
-
-            <div class="sim-field">
-              <h2 class="sim-step-title">Surface habitable</h2>
-              <input type="number" min="10" step="1" placeholder="m²" aria-label="Surface en mètres carrés" />
-            </div>
-
-            <div class="sim-field sim-step" id="step-details">
-              <h2 class="sim-step-title">Nombre de couchages</h2>
-              <div class="stepper-field">
-                <button type="button" class="step-btn" data-step-target="simBeds" data-step-dir="-1">−</button>
-                <input id="simBeds" type="number" min="1" max="14" value="4" />
-                <button type="button" class="step-btn" data-step-target="simBeds" data-step-dir="1">+</button>
-              </div>
-            </div>
-
-            <div class="sim-field">
-              <h2 class="sim-step-title">Année de construction</h2>
-              <div class="picker-field">
-                <button type="button" class="picker-arrow" id="simYearPrev" aria-label="Période précédente">‹</button>
-                <div class="picker-display">
-                  <span class="picker-label" id="simYearLabel">Après 2010</span>
-                  <span class="picker-sublabel" id="simYearSublabel">Construction récente</span>
-                </div>
-                <button type="button" class="picker-arrow" id="simYearNext" aria-label="Période suivante">›</button>
-              </div>
-              <select id="simYear" class="visually-hidden" aria-hidden="true" tabindex="-1">
-                <option value="after2010" selected>Après 2010</option>
-                <option value="between2000_2010">2000 – 2010</option>
-                <option value="before2000">Avant 2000</option>
-              </select>
-            </div>
+            </aside>
           </div>
-
-          <div class="sim-step compact-slider-wrap">
-            <h2 class="sim-step-title">Objectif de revenus mensuel</h2>
-            <div class="range-wrap">
-              <input id="simSlider" class="range-premium" type="range" min="500" max="6000" value="2600" step="100" />
-              <div class="range-value-pill" id="simSliderValue">2&nbsp;600&nbsp;€</div>
-            </div>
-          </div>
-
-          <fieldset class="check-grid check-grid-premium sim-step" id="step-equipment">
-            <legend>Équipements</legend>
-            <label class="check-pill"><input type="checkbox" value="piscine" /> <span>Piscine</span></label>
-            <label class="check-pill"><input type="checkbox" value="terrasse" /> <span>Terrasse</span></label>
-            <label class="check-pill"><input type="checkbox" value="vue" /> <span>Vue mer</span></label>
-            <label class="check-pill"><input type="checkbox" value="jacuzzi" /> <span>Jacuzzi</span></label>
-            <label class="check-pill"><input type="checkbox" value="parking" /> <span>Parking</span></label>
-          </fieldset>
-
-          <div class="result-box sim-step" id="step-results">
-            <p>Revenus mensuels estimés</p>
-            <h2 id="simMonthly">0&nbsp;€</h2>
-            <p>Revenus annuels estimés</p>
-            <h3 id="simYearly">0&nbsp;€</h3>
-            <a href="./contact.html" class="btn btn-primary">Demander une estimation complète</a>
-          </div>
-        </section>
+        </div>
       </main>
 
-      <footer class="site-footer-lou">
+      <footer class="site-footer-lou sim-premium-footer">
         <div class="container footer-grid">
           <div class="footer-brand-block">
             <div class="footer-logo-card">LouCleou<br /><span>Conciergerie immobilière premium</span></div>
